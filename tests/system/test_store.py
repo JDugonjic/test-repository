@@ -5,14 +5,7 @@ from tests.base_test import BaseTest
 
 class StoreTest(BaseTest):
     def test_create_store(self):
-        with self.app() as client:
-            with self.app_context():
-                resp = client.post('/store/test')
-
-            self.assertEqual(resp.status_code, 201)
-            self.assertIsNotNone(StoreModel.find_by_name('test'))
-            self.assertDictEqual({'name' : 'test', 'items' : []}, json.loads(resp.data))
-
+        pass
 
     def test_create_duplicate_store(self):
         pass
